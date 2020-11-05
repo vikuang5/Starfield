@@ -1,4 +1,4 @@
-Particle [] x = new Particle[1000];
+Particle [] x = new Particle[1500];
 void setup()
 {
   size(500, 500);
@@ -20,14 +20,14 @@ class Particle
   int myColor; 
   Particle()
   {
-    myX = myY = 200;
+    myX = myY = 250;
     myAngle = Math.random()*2*Math.PI;
     mySpeed = Math.random()*10;
     myColor = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
   }
   void show() {
     fill(myColor);
-    ellipse((float)myX, (float)myY, 80, 80);
+    ellipse((float)myX, (float)myY, 40, 40);
   }
   void move() {
     myX = myX + Math.cos(myAngle) * mySpeed;
@@ -39,17 +39,18 @@ class OddballParticle extends Particle
 {
   OddballParticle()
   {
-    myX = myY = 200;
+    myX = myY = 250;
     myAngle = Math.random()*2*Math.PI;
-    mySpeed = Math.random()*10;
-    myColor = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    mySpeed = 1;
+    myColor = color(0, 0, 0);
   }
   void show() {
     fill(myColor);
-    ellipse((float)myX, (float)myY, 100, 100);
+    ellipse((float)myX, (float)myY, 200, 200);
   }
   void move() {
     myX = myX + Math.cos(myAngle) / mySpeed;
     myY = myY + Math.sin(myAngle) / mySpeed;
   }
 }
+
